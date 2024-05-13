@@ -16,6 +16,7 @@ def mask_number_of_card(card_number: str) -> str | None:
 
 def mask_check(check_number: str) -> str:
     """Принимает на вход номер счета. Возвращает замаскированный номер счета."""
+
     if check_number.isdigit() is False:
-        return "Неверно указан номер счет"
-    return "**" + check_number[-4:]
+        return "Неверно указан номер счета"
+    return f'**{check_number[-4:]}'
