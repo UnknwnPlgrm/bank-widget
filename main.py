@@ -1,20 +1,7 @@
-from Src import directory_info, mask
+from Src import widget
 
-card_number = input("Введите номер карты: ")
-check_number = input("Введите номер счета: ")
-recursion = False
+card_or_check_data = input('Введите данные счета/карты: ')
+unformated_operation_data = input('Введите дату проведенной операции: ')
 
-print(f"Замаскированнй номер карты: {mask.mask_number_of_card(card_number)}")
-print(f"Замаскированный номер счета: {mask.mask_check(check_number)}")
-
-print("Дополнительное задание")
-
-path = input("Введите путь к директории: ")
-recursion_input = input("Запустить полное сканирование директории? (True/False): ")
-
-if recursion_input == "True":
-    recursion = True
-elif recursion_input == "False":
-    recursion = False
-
-print(directory_info.get_directory_info(path, recursion))
+print(widget.mask_multifunction(card_or_check_data))
+print(widget.formatting_data_string(unformated_operation_data))
