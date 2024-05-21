@@ -9,7 +9,7 @@ def filter_of_bank_operation(operation_list: list, operation_status: str = "EXEC
     return filtered_operation_list
 
 
-def operation_date_sorting(operation_list: list, reverse_parameter: bool = False) -> list:
+def operation_date_sorting(operation_list: list, reverse_parameter: bool = True) -> list:
     """Функция принимает на вход список банковских операций и параметр порядка сортировки.
     Возвращает отсортированный список операций по дате проведения"""
 
