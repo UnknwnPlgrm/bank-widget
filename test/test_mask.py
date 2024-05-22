@@ -19,3 +19,4 @@ def test_mask_number_of_card(card_number, mask_card_number):
 ])
 def test_mask_check(check_number, mask_check_number):
     assert mask.mask_check(check_number) == mask_check_number
+
