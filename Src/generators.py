@@ -5,9 +5,10 @@ def generator_of_filtered_bank_operation(operation_list: list, currency: str) ->
     """Функция-генератор принимает на вход список банковских операций и тип валюты для сортировки.
     Возвращает, по вызову, отфильтрованную по типу валюты, банковскую операцию"""
 
-    for operation in operation_list:
-        if operation["operationAmount"]["currency"]["code"] == currency:
-            yield operation
+    if operation_list != []:
+        for operation in operation_list:
+            if operation["operationAmount"]["currency"]["code"] == currency:
+                yield operation
     while True:
         yield "Банковские операции более не найдены"
 
@@ -15,9 +16,9 @@ def generator_of_filtered_bank_operation(operation_list: list, currency: str) ->
 def generator_of_description_of_operation(operation_list: list) -> Generator[str, int, None]:
     """Функция-генератор принимает на вход список банковских операций.
     Возвращает, по вызову, описание банковской операции"""
-
-    for operation in operation_list:
-        yield operation["description"]
+    if operation_list != []:
+        for operation in operation_list:
+            yield operation["description"]
     while True:
         yield "Банковские операции более не найдены"
 
